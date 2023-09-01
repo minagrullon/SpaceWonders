@@ -13,10 +13,10 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    userLogin(user);
-  };
+  //   const handleLogin = (e) => {
+  //     e.preventDefault();
+  //     userLogin(user);
+  //   };
 
   const handleTextChange = (e) => {
     setUserLogin({ ...userLogin, [e.target.id]: e.target.value });
@@ -25,8 +25,10 @@ export default function Login() {
   return (
     <div className="loginForm">
       <h2 className="loginForm__welcome">Welcome to SPACE WONDERS</h2>
+      <p> wvsjavdxjgsvhkcdskhcshcbldjvbjldvjdjvndjlbvnjdnvbjl</p>
       <h3 className="loginForm__title">Login</h3>
-      <form onSubmit={handleLogin}>
+      <form>
+        {/* onSubmit={handleLogin} */}
         <label>
           Username:
           <input
