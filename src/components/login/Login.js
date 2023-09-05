@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import moon from "../../Assets/la-luna.png";
+import earth from "../../Assets/lovely-earth.jpeg";
 import "./Login.scss";
 
 export default function Login() {
@@ -24,10 +26,18 @@ export default function Login() {
 
   return (
     <div className="loginForm">
-      <h2 className="loginForm__welcome">Welcome to SPACE WONDERS</h2>
-      <p> wvsjavdxjgsvhkcdskhcshcbldjvbjldvjdjvndjlbvnjdnvbjl</p>
-      <h3 className="loginForm__title">Login</h3>
-      <form>
+      <h2 className="loginForm__welcome">The Galaxy awaits!</h2>
+      <h1 className="loginForm__welcome"> Explore with SPACE WONDERS</h1>
+      {/* Moon Animation */}
+      <div className="loginForm__earth-moon">
+        <img className="loginForm__earth" src={earth} alt="earth" />
+        <div>
+          <img className="loginForm__moon" src={moon} alt="moon" />
+        </div>
+      </div>
+
+      <h3 className="loginForm__title"></h3>
+      <form className="loginForm__form">
         {/* onSubmit={handleLogin} */}
         <label>
           Username:
@@ -56,6 +66,9 @@ export default function Login() {
         <p>New? Sign up!</p>
         <Link to="/signup">
           <button className="signup__button">Sign up</button>
+        </Link>
+        <Link to="/">
+          <button className="bypass__login">Explore without account</button>
         </Link>
       </div>
     </div>

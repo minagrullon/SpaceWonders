@@ -1,0 +1,151 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+
+  &__welcome {
+    color: rgb(219, 216, 216);
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Moon Animation Container */
+  &__earth-moon {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__earth {
+    margin-top: 2em;
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+  }
+
+  /* Moon Animation */
+  &__moon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-100%, -100%);
+    animation: moonOrbit 10s linear infinite;
+  }
+  &__moon img {
+    // mix-blend-mode: multiply;
+    background-color: transparent;
+  }
+
+  &__title {
+    color: rgb(219, 216, 216);
+    font-size: 20px;
+  }
+
+  &__form {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  &__form label {
+    color: rgb(240, 237, 237);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: rgb(240, 237, 237);
+  }
+
+  &__form button[type="submit"] {
+    background-color: #021b2c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  &__form button[type="submit"]:hover {
+    background-color: #35093d;
+    box-shadow: 1px 1px 2px rgb(246, 192, 192), -0.4em 0 0.6em rgb(67, 45, 72);
+  }
+}
+
+.signup__question {
+  margin-top: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.signup__button {
+  background-color: #35093d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.signup__button:hover {
+  box-shadow: 1px 1px 2px rgb(246, 192, 192), -0.4em 0 0.6em rgb(67, 45, 72);
+}
+
+.bypass__login {
+  background-color: #35093d80;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0.5px solid rgb(73, 73, 73);
+}
+
+.bypass__login:hover {
+  box-shadow: 1px 1px 1px rgb(246, 192, 192), -0.4em 0 0.6em rgb(67, 45, 72);
+}
+
+/* Moon Rotation Animation */
+@keyframes earthRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rocket Orbit Animation */
+@keyframes moonOrbit {
+  0% {
+    transform: translate(-150%, -150%) rotate(0deg) translateX(-110px);
+  }
+  100% {
+    transform: translate(-150%, -150%) rotate(360deg) translateX(-110px);
+  }
+}
