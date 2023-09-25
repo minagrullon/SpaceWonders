@@ -9,6 +9,7 @@ import ImageOfDay from "./components/imageOfTheDay/ImageOfDay";
 
 //Pages
 import Home from "./pages/Home";
+import VideoResults from "./pages/VideoResults";
 
 export default function RouteComponent() {
   return (
@@ -19,7 +20,7 @@ export default function RouteComponent() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/account" element={<Account />} />
         <Route path="/imageOfTheDay" element={<ImageOfDay />} />
-        {/* <Route path='/videos' */}
+        <Route path="/videos" element={<VideoResults />} />
       </Routes>
     </div>
   );

@@ -26,6 +26,7 @@ export default function ImageOfDay() {
         <h2 className="imageOfDay_main-title">The</h2>
         <h2 className="imageOfDay_main-title">Day</h2>
       </span>
+      {console.log(imageData)}
       <div className="imageOfDayContainer">
         <div className="imageOfDayContainer__image">
           <img src={imageData.url} alt={`${imageData.title}`} />
