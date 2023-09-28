@@ -11,7 +11,12 @@ export default function Navbar() {
         <img className="navbar__main_logo" src={pic} alt="space-logo" />
       </Link>
       <div className="navbar__main">
-        <li className="navbar__main_li"></li>
+        <li className="navbar__main_li">
+          <Link to="/imageOfTheDay">Image Of the Day</Link>
+        </li>
+        <li className="navbar__main_li">
+          <Link to="/videos">Videos</Link>
+        </li>
         <li className="navbar__main_li">
           <Link to="/learn">Learn</Link>
         </li>
