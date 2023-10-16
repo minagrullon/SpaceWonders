@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import SingleVid from "../components/singleVid/SingleVid";
 
 const URL = process.env.REACT_APP_SEARCH;
 
@@ -12,12 +13,14 @@ export default function VideoResults() {
 
   useEffect(() => {
     axios
-      .get(`${URL}${search}`)
+      .get(`https://images-api.nasa.gov/search?media_type=video`)
+      // .get(`${URL}${search}`)
       .then((res) =>
         setVideos(
-          res.data.collection.items.filter(
-            (obj) => obj.data[0].media_type === "video"
-          )
+          res.data.collection.items
+          // res.data.collection.items.filter(
+          //   (obj) => obj.data[0].media_type === "video"
+          // )
         )
       )
       .catch((err) => console.warn(err));
@@ -28,33 +31,15 @@ export default function VideoResults() {
       Videos from NASA's collection
       {console.log(videos)}
       {videos.length > 0
-        ? videos.map((video) => (
-            <div>
-              <Link to="/videos/:id">
-                <h4>{video.data[0].title}</h4>
-                <img
-                  style={{ height: "400px", width: "400px" }}
-                  src={video.links[0].href}
-                  alt={video.data[0].title}
-                />
+        ? videos.map((video, indx) => (
+            <div key={indx}>
+              <Link to={`/videos/${indx}`}>
+                <SingleVid video={video} json={video.href} />
+                {console.log(video.href)}
               </Link>
             </div>
           ))
-        : // <div
-          //   style={{ height: "400px", width: "400px", border: "2px solid white" }}
-          // >
-          //   {console.log(videos[1].links[0].href)}
-          //   <img
-          //     style={{ height: "400px", width: "400px" }}
-          //     src={
-          //       videos[1].links[0].href
-          //       // "http://images-assets.nasa.gov/video/GSFC_20170515_Sunglints_m12600/GSFC_20170515_Sunglints_m12600~orig.mp4"
-          //     }
-          //     // type="video/mp4"
-          //     alt={""}
-          //   />
-          // </div>
-          null}
+        : null}
     </div>
   );
 }

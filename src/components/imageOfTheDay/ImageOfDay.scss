@@ -1,37 +1,60 @@
 .imageOfDay_main-title {
-  text-transform: capitalize;
+  display: flex;
+  justify-content: flex-start;
   color: rgb(219, 211, 211);
+  margin: 0 auto;
+  padding: 0.5em;
+
+  font-size: 1.5em;
 }
 
 .imageOfDayContainer {
-  display: flex;
-  //   justify-content: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 80%;
   margin: 0 auto;
 
+  &__image {
+    margin-top: 1.6em;
+    width: 40vw;
+    height: auto;
+  }
+
   &__image img {
-    height: 70vh;
+    width: 90%;
+    height: inherit;
+    border-radius: 20px;
+    border: 2px solid white;
   }
 
   &__image {
     overflow: hidden;
-    border: 2px solid white;
-    border-radius: 20px;
   }
 
   &__image-title {
-    margin-top: 2em;
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: left;
   }
 
   &__description {
-    padding: 2em;
+    padding: 1em;
     line-height: 1.75em;
     margin-left: 1em;
-    margin-right: 1em;
+  }
+}
+
+@media (max-width: 1048px) {
+  .imageOfDayContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      width: 80vw;
+      height: auto;
+    }
   }
 }

@@ -20,12 +20,12 @@ export default function ImageOfDay() {
 
   return (
     <div>
-      <span className="imageOfDay_main-title">
-        <h2 className="imageOfDay_main-title">Image </h2>
-        <h2 className="imageOfDay_main-title"> Of </h2>
+      <div className="imageOfDay_main-title">
+        <h2 className="imageOfDay_main-title">Image Of the Day </h2>
+        {/* <h2 className="imageOfDay_main-title"> Of </h2>
         <h2 className="imageOfDay_main-title">The</h2>
-        <h2 className="imageOfDay_main-title">Day</h2>
-      </span>
+        <h2 className="imageOfDay_main-title">Day</h2> */}
+      </div>
       {console.log(imageData)}
       <div className="imageOfDayContainer">
         <div className="imageOfDayContainer__image">
