@@ -1,0 +1,44 @@
+.videoPageTitle {
+  padding: 1em;
+  margin-top: 2em;
+}
+
+.videoResults {
+  padding: 1em;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__div {
+    // border: 1px solid red;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.singleVideo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  height: 500px;
+  background: rgb(40, 39, 39);
+  border-radius: 20px;
+  padding: 1em;
+  margin: 1em;
+
+  &__title {
+    color: rgb(217, 217, 217);
+  }
+
+  &__video {
+    border-radius: 10px;
+    height: 350px;
+    width: 350px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px 5px #514f52;
+  }
+}

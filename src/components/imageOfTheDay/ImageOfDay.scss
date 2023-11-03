@@ -1,10 +1,13 @@
 .imageOfDay_main-title {
   display: flex;
   justify-content: flex-start;
-  color: rgb(219, 211, 211);
+  color: rgb(199, 198, 198);
   margin: 0 auto;
   padding: 0.5em;
-
+  // font-size: 72px;
+  background: -webkit-linear-gradient(rgb(88, 12, 112), rgb(150, 47, 36));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.5em;
 }
 
@@ -24,7 +27,7 @@
     width: 90%;
     height: inherit;
     border-radius: 20px;
-    border: 2px solid white;
+    border: 1.5px solid rgb(156, 154, 154);
   }
 
   &__image {
@@ -34,12 +37,14 @@
   &__image-title {
     font-size: 2em;
     text-align: left;
+    color: rgb(212, 209, 209);
   }
 
   &__description {
     padding: 1em;
     line-height: 1.75em;
     margin-left: 1em;
+    color: rgb(201, 199, 199);
   }
 }
 
