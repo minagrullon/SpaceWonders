@@ -9,8 +9,6 @@ export default function VideoResults() {
   const [videos, setVideos] = useState([]);
   const [search, setSearch] = useState("earth");
 
-  let videoSrc = "";
-
   useEffect(() => {
     axios
       .get(`https://images-api.nasa.gov/search?media_type=video`)
@@ -27,13 +25,13 @@ export default function VideoResults() {
         {videos.length > 0
           ? videos.map((video, indx) => (
               <div key={indx} className="videoResults__div">
-                <Link to={`/videos/${indx}`}>
-                  <SingleVid video={video} json={video.href} />
-                  {console.log(video.href)}
-                </Link>
+                {/* <Link to={`/videos/${indx}`}> */}
+                <SingleVid video={video} json={video.href} />
+                {console.log(video.href)}
+                {/* </Link> */}
               </div>
             ))
-          : null}
+          : "Loading..."}
       </div>
     </div>
   );

@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ReactPlayer from "react-player";
+import VidModal from "./VidModal";
 import "./SingleVid.scss";
 
 export default function SingleVid({ video, json }) {
+  const [showModal, setShowModal] = useState(false);
   const [videoMp4, setVideoMp4] = useState("");
 
   useEffect(() => {
@@ -17,18 +20,28 @@ export default function SingleVid({ video, json }) {
   }, [json]);
 
   return (
-    <div className="singleVideo">
+    <div className="singleVideo" onClick={() => setShowModal(!showModal)}>
       {/* {console.log(videoMp4)} */}
-      <h4 className="singleVideo__title">{video.data[0].title}</h4>
-      <iframe
-        className="singleVideo__video"
-        // style={{ height: "400px", width: "400px" }}
-        src={video.links[0].href}
-        allow="autoplay; fullscreen; picture-in-picture"
-        loading="lazy"
-        alt={video.data[0].title}
-        title={video.data[0].title}
-      ></iframe>
+      {setVideoMp4 ? (
+        <>
+          <h4 className="singleVideo__title">{video.data[0].title}</h4>
+
+          {/* <ReactPlayer
+              url={videoMp4}
+              height="100%"
+              width="100%"
+              controls={true}
+            /> */}
+
+          <img src={video.links[0].href} alt={video.links[0].href} />
+        </>
+      ) : (
+        "Loading...."
+      )}
+
+      {showModal ? (
+        <VidModal video={video} videoMp4={videoMp4} showModal={showModal} />
+      ) : null}
     </div>
   );
 }

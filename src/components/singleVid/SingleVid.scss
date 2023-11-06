@@ -1,16 +1,19 @@
 .videoPageTitle {
+  margin: 0 auto;
   padding: 1em;
   margin-top: 2em;
+  width: 72%;
 }
 
 .videoResults {
+  width: 75%;
   padding: 1em;
   margin-top: 2em;
   display: grid;
+  margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
 
   &__div {
-    // border: 1px solid red;
     a {
       text-decoration: none;
     }
@@ -21,6 +24,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: auto;
   height: 500px;
   background: rgb(40, 39, 39);
@@ -34,8 +38,8 @@
 
   &__video {
     border-radius: 10px;
-    height: 350px;
-    width: 350px;
+    // height: 350px;
+    // width: 350px;
   }
 
   &:hover {
