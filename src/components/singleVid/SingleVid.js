@@ -22,6 +22,7 @@ export default function SingleVid({ video, json }) {
   return (
     <div className="singleVideo" onClick={() => setShowModal(!showModal)}>
       {/* {console.log(videoMp4)} */}
+      {console.log(video)}
       {setVideoMp4 ? (
         <>
           <h4 className="singleVideo__title">{video.data[0].title}</h4>
