@@ -6,11 +6,11 @@
 }
 
 .videoResults {
-  width: 75%;
-  padding: 1em;
+  width: 80%;
+  //   padding: 1em;
   margin-top: 2em;
   display: grid;
-  margin: 0 auto;
+  //   margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
 
   &__div {
@@ -23,17 +23,17 @@
 .singleVideo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: auto;
-  height: 500px;
+  height: 300px;
   background: rgb(40, 39, 39);
   border-radius: 20px;
-  padding: 1em;
+  padding: 1.2em;
   margin: 1em;
+  overflow: hidden; //i don't think imma keep this. this is temp!!!!!
 
   &__title {
     color: rgb(217, 217, 217);
+    font-size: 1.1rem;
   }
 
   &__video {
@@ -44,5 +44,9 @@
 
   &:hover {
     box-shadow: 0 0 20px 5px #514f52;
+  }
+
+  &__img {
+    height: 75%;
   }
 }

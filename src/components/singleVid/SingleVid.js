@@ -10,6 +10,11 @@ export default function SingleVid({ video, json }) {
   const [showModal, setShowModal] = useState(false);
   const [videoMp4, setVideoMp4] = useState("");
 
+  const shortenedTitle =
+    video.data[0].title.length > 60
+      ? video.data[0].title.substring(0, 70) + "..."
+      : video.data[0].title;
+
   useEffect(() => {
     axios
       .get(json)
@@ -21,20 +26,16 @@ export default function SingleVid({ video, json }) {
 
   return (
     <div className="singleVideo" onClick={() => setShowModal(!showModal)}>
-      {/* {console.log(videoMp4)} */}
       {console.log(video)}
+
       {setVideoMp4 ? (
         <>
-          <h4 className="singleVideo__title">{video.data[0].title}</h4>
-
-          {/* <ReactPlayer
-              url={videoMp4}
-              height="100%"
-              width="100%"
-              controls={true}
-            /> */}
-
-          <img src={video.links[0].href} alt={video.links[0].href} />
+          <img
+            className="singleVideo__img"
+            src={video.links[0].href}
+            alt={video.links[0].href}
+          />
+          <h4 className="singleVideo__title">{shortenedTitle}</h4>
         </>
       ) : (
         "Loading...."
