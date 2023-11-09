@@ -30,7 +30,7 @@ export default function VideoResults() {
             </div>
           ))
         ) : (
-          <p className="videoResults__loading">"Loading...."</p>
+          <p className="videoResults__loading">Loading....</p>
         )}
       </div>
     </div>

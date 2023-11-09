@@ -38,7 +38,7 @@ export default function SingleVid({ video, json }) {
           <h4 className="singleVideo__title">{shortenedTitle}</h4>
         </>
       ) : (
-        <p>"Loading...."</p>
+        <p>Loading....</p>
       )}
 
       {showModal ? (
