@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ArticleDetails from "../components/articleDets/ArticleDetails";
 
 const URL = process.env.REACT_APP_NEWS;
 
@@ -22,11 +23,14 @@ export default function Home() {
 
   return (
     <div className="homePage">
-      <h2 style={{ color: "white" }}>Explore with Space Wonders</h2>
+      <h1 className="homePage__title" style={{ color: "white" }}>
+        Discover the lastest Space News!
+      </h1>
       {console.log(articles)}
       <div className="homePage__articles">
-        {articles.map((el) => {
-          return <li>{el.title}</li>;
+        {articles.map((article) => {
+          return <ArticleDetails article={article} />;
+          //! it would be better to have these be clickable links that redirects to the details component.
         })}
       </div>
     </div>
