@@ -23,12 +23,15 @@ export default function ArticleDetails({ article }) {
         onMouseEnter={createGlow}
         onMouseLeave={endGlow}
       >
-        <h2 className="articleContainer__title">{article.title}</h2>
+        <div className="articleContainer__content">
+          <h2 className="articleContainer__title">{article.title}</h2>
+          <p className="articleContainer__description">{article.description}</p>
+        </div>
         <img
           className="articleContainer__image"
           src={article.urlToImage}
           alt={article.title}
-          style={{ height: "400px" }}
+          // style={{ height: "400px" }}
         />
       </div>
     </Link>

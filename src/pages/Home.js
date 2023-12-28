@@ -28,10 +28,13 @@ export default function Home() {
       </h1>
       {console.log(articles)}
       <div className="homePage__articles">
-        {articles.map((article) => {
-          return <ArticleDetails article={article} />;
-          //! it would be better to have these be clickable links that redirects to the details component.
-        })}
+        {articles.length > 0 ? (
+          articles.map((article, indx) => {
+            return <ArticleDetails article={article} key={indx} />;
+          })
+        ) : (
+          <div className="homePage__loading">Loading....</div>
+        )}
       </div>
     </div>
   );
