@@ -20,10 +20,10 @@ export default function Navbar() {
         <li className="navbar__main_li">
           <Link to="/learn">Learn</Link>
         </li>
-        <li className="navbar__main_li">
+        {/* <li className="navbar__main_li">
           <Link to="/play">Play</Link>
-        </li>
-        <button className="navbar__button">Log out</button>
+        </li> */}
+        {/* <button className="navbar__button">Log out</button> */}
       </div>
     </nav>
   );
