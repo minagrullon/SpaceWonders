@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./ArticleDetails.scss";
+import Default from "../../Assets/default-img.png";
 
 export default function ArticleDetails({ article }) {
   const [isGlowing, setIsGlowing] = useState(false);
@@ -27,11 +28,11 @@ export default function ArticleDetails({ article }) {
           <h2 className="articleContainer__title">{article.title}</h2>
           <p className="articleContainer__description">{article.description}</p>
         </div>
+
         <img
           className="articleContainer__image"
-          src={article.urlToImage}
+          src={article.urlToImage ? article.urlToImage : Default}
           alt={article.title}
-          // style={{ height: "400px" }}
         />
       </div>
     </Link>
