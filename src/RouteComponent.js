@@ -7,6 +7,7 @@ import Signup from "./components/signup/Signup";
 import Account from "./components/account/Account";
 import ImageOfDay from "./components/imageOfTheDay/ImageOfDay";
 import SingleVid from "./components/singleVid/SingleVid";
+import LearnCards from "./components/learnPage/LearnCards";
 
 //Pages
 import Home from "./pages/Home";
@@ -24,6 +25,7 @@ export default function RouteComponent() {
         <Route path="/imageOfTheDay" element={<ImageView />} />
         <Route path="/videos" element={<VideoResults />} />
         <Route path="/videos/:id" element={<SingleVid />} />
+        <Route path="/learn" element={<LearnCards />} />
       </Routes>
     </div>
   );
